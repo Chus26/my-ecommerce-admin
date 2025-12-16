@@ -1,0 +1,114 @@
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 64px; /* Quan trọng: Bằng chiều cao .sidebarHeader */
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb; /* Quan trọng: Giống .sidebarHeader */
+  position: relative;
+  flex-shrink: 0;
+}
+
+
+.pageTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.userProfile {
+  position: relative;
+}
+
+.profileButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.profileButton:hover {
+  background-color: #f3f4f6;
+}
+
+.userIcon {
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin-right: 0.5rem;
+}
+
+.userName {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Lớp mờ che toàn màn hình khi mở dropdown */
+.dropdownBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 120%; /* Đẩy xuống 1 chút */
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #f9fafb;
+}
+
+.dropdownItem svg {
+  color: #9ca3af;
+}
+
+/* Responsive cho Header */
+@media screen and (max-width: 992px) {
+  .adminHeader {
+    padding: 0 1rem;
+  }
+  .pageTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .userName {
+    display: none; /* Ẩn tên user, chỉ hiện icon */
+  }
+  .adminHeader {
+    /* Đẩy header sang phải để né nút hamburger */
+    padding-left: 4.5rem; /* 1rem + 40px + 1rem */
+  }
+}

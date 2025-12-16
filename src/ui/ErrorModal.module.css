@@ -1,0 +1,57 @@
+/* Error styling */
+.error-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.error-modal {
+  position: fixed;
+  z-index: 1;
+  max-width: 600px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error-modal > div {
+  display: flex;
+  min-width: 300px;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: rgb(177, 194, 255);
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.error-modal > div > h3 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+  font-size: 1.4rem;
+  color: #eef99d;
+}
+.error-modal > div > p {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: #d30707;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.error-modal > div > p.close {
+  margin-top: 1rem;
+  color: #fff;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  background-color: #4fcf20;
+}

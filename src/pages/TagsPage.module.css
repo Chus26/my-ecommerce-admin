@@ -1,0 +1,218 @@
+/* ===== FILE: src/pages/admin/TagsPage.module.css ===== */
+
+.container {
+  padding: 1.5rem;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Thêm mới */
+.form {
+  background-color: #f9fbfd;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5f76e8;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+}
+
+.formControl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.formControl label {
+  font-weight: 500;
+  color: #333;
+}
+
+.formControl input,
+.formControl select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Bảng danh sách */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableWrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tableWrapper th,
+.tableWrapper td {
+  border: 1px solid #eee;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.tableWrapper th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.slug {
+  background-color: #eef2ff;
+  color: #4338ca;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* Các nút */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.btnSave {
+  background-color: #5f76e8;
+  color: #fff;
+}
+
+.btnCancel {
+  background-color: #6b7280;
+  color: #fff;
+}
+
+.btnEdit {
+  background-color: #f59e0b;
+  color: #fff;
+}
+
+.btnDelete {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+/* Phân trang */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pageItem {
+  margin: 4px;
+}
+
+.pageLink {
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #5f76e8;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.pageItem:not(.disabled) .pageLink:hover {
+  background-color: #eef2ff;
+}
+
+.pageLinkActive {
+  background-color: #5f76e8;
+  color: #fff;
+  border-color: #5f76e8;
+}
+
+.pageItem.disabled .pageLink {
+  color: #aaa;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+}
+
+/* ===============================================
+  ===== BẮT ĐẦU CSS MỚI (CHO NÚT TRONG FORM) =====
+  ===============================================
+*/
+.formActions button {
+  border: none;
+  padding: 0.6rem 1.2rem; /* Tăng padding cho đẹp */
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.formActions button:hover {
+  opacity: 0.9;
+}
+/* ===============================================
+  ======= KẾT THÚC CSS MỚI (CHO NÚT TRONG FORM) =======
+  ===============================================
+*/
+
+/* ===============================================
+   ===== BẮT ĐẦU CSS MỚI (CHO BỘ LỌC) =====
+   =============================================== */
+.filterControl {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterControl label {
+  font-weight: 500;
+  color: #333;
+}
+
+.filterControl select {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+
+/* ===============================================
+   ===== KẾT THÚC CSS MỚI (CHO BỘ LỌC) =====
+   =============================================== */

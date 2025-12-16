@@ -1,0 +1,286 @@
+/* Info bar styling */
+.info {
+  margin-left: 300px;
+  padding: 1.5rem;
+  width: calc(100% - 300px);
+}
+
+.index > .statistic {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+.index > .statistic > div {
+  flex: 1;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.index > .statistic > div > h3 {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 500;
+}
+.index > .statistic > div > p {
+  font-size: 1.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.index > .statistic > div .icon {
+  display: flex;
+  justify-content: flex-end;
+}
+.statistic .icon > p > i {
+  font-size: 12px;
+}
+.index > .statistic > div .icon > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 0.25rem;
+}
+
+/* latest transations */
+
+.transactions {
+  padding: 2.5rem;
+  padding-bottom: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.transactions h3,
+.hotel h3,
+.room h3 {
+  margin-bottom: 1rem;
+  color: #9da1a1;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.hotel > .add-hotel,
+.room > .add-room {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hotel > .add-hotel > button,
+.room > .add-room > button {
+  margin-bottom: 0.5rem;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #108c07;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  color: #108c07;
+  border-radius: 0.25rem;
+}
+.transactions .icon,
+.hotel .icon,
+.room .icon {
+  font-size: 0.9rem;
+}
+.transactions th,
+.hotel th,
+.room th {
+  position: relative;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.transactions table,
+.hotel table,
+.room table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+.transactions th::after,
+.hotel th::after,
+.room th::after {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  display: block;
+  width: 2px;
+  height: 20px;
+  background-color: #ccc;
+}
+
+.transactions .background-gray,
+.hotel .background-gray,
+.room .background-gray {
+  background-color: #f2f2f2;
+}
+
+.transactions th,
+.transactions td,
+.hotel th,
+.hotel td,
+.room th,
+.room td {
+  text-align: left;
+  height: 50px;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+.transactions td,
+.hotel td,
+.room td {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.8rem;
+}
+.transactions td .booked,
+.checkin,
+.checkout {
+  color: red;
+  font-weight: 500;
+  display: inline-block;
+  color: #108c07;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.transactions td .booked {
+  background-color: #f69685;
+}
+
+.transactions td .checkin {
+  background-color: #39d138;
+}
+.transactions td .checkout {
+  background-color: #d3d0f2;
+}
+
+.transactions .space,
+.hotel .space,
+.room .space {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.transactions .bottom,
+.hotel .bottom,
+.room .bottom {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid #ccc;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  padding: 1rem 0;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+.transactions .bottom > i,
+.hotel .bottom > i,
+.room .bottom > i {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+.hotel .bottom,
+.room .bottom {
+  border-bottom: 1px solid #ccc;
+}
+
+.hotel .action > button,
+.room .action > button {
+  background-color: transparent;
+  outline: none;
+  border: 1px dashed salmon;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  color: salmon;
+  border-radius: 0.25rem;
+}
+
+.room .action,
+.hotel .action {
+  display: flex;
+}
+.room .action > .edit,
+.hotel .action > .edit {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #7717f4;
+  background-color: #7717f4;
+  color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width: 1248px) {
+  .index {
+    padding-right: 1rem;
+  }
+  .info {
+    margin-left: 200px;
+    padding: 1.2rem 0 0 1.2rem;
+    width: calc(100% - 200px);
+  }
+  .info > div {
+    margin-right: 1rem;
+  }
+  .transactions {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+  .transactions th,
+  .transactions td {
+    padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .info {
+    margin-left: 0;
+
+    width: 100%;
+  }
+  .transactions {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+}
+@media screen and (max-width: 732px) {
+  .info {
+    margin-left: 0;
+
+    width: 100%;
+  }
+  .info > div {
+    margin-left: 0;
+  }
+  .transactions th,
+  .hotel th,
+  .hotel td,
+  .transactions td,
+  .room th,
+  .room td {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+  }
+  .transactions {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+}

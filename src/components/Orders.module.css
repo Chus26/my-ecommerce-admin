@@ -1,0 +1,180 @@
+/* Orders Styling */
+.orders {
+  margin-top: 1.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders > h3 {
+  color: #333;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.orders table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders th {
+  padding: 0.5rem;
+  color: #868788;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.orders td {
+  padding: 1rem 0.5rem;
+  color: #4a4b50;
+  font-weight: 500;
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.orders tr.gray {
+  background-color: #f4f8fb;
+}
+
+.orders a {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #22ca80;
+  background-color: #22ca80;
+  color: #fff;
+  font-size: 0.75rem;
+  transition: background 0.2s;
+}
+
+.orders a:hover {
+  background-color: #1da86c;
+}
+
+/* ✅ select dropdown cho trạng thái */
+.orders select {
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid #d0d4d9;
+  background-color: #f9fafb;
+  color: #333;
+  font-size: 0.75rem;
+  outline: none;
+  min-width: 120px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.orders select:focus {
+  border-color: #22ca80;
+  box-shadow: 0 0 0 2px rgba(34, 202, 128, 0.15);
+}
+
+/* ✅ nút Lưu */
+.orders button {
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #22ca80;
+  background-color: #22ca80;
+  color: #fff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.orders button:hover:not(:disabled) {
+  background-color: #1da86c;
+  transform: translateY(-1px);
+}
+
+.orders button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ✅ hint nhỏ bên dưới select (tuỳ chọn) */
+.hint {
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 0.2rem;
+}
+
+.orders th,
+.orders td {
+  white-space: nowrap;
+}
+
+.address {
+  white-space: normal;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions,
+.narrow {
+  width: 1%;
+  white-space: nowrap;
+}
+
+/* ✅ bọc ngoài bảng để tránh tràn */
+.tableWrap {
+  width: 100%;
+  overflow-x: auto; /* Nếu bảng rộng quá thì cho cuộn ngang */
+}
+
+/* Bảng */
+.orders table {
+  width: 100%;
+  min-width: 900px; /* ✅ để bảng không bị ép nhỏ quá */
+  border-collapse: collapse;
+}
+
+
+/* Chỉ thêm padding và bo góc, màu sẽ set bằng style inline */
+.status-select {
+  border-radius: 6px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.5rem;
+}
+
+.status-select {
+  border-radius: 6px;
+  font-weight: 600;
+  color: #1f2937;         /* xám đậm để dễ đọc trên nền sáng */
+  border: none;
+  padding: 0.3rem 0.5rem;
+}
+
+.simplePager{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+  margin-top:12px;
+}
+.simplePager button{
+  padding:4px 8px;
+  border:1px solid #ccc;
+  background:#fff;
+  cursor:pointer;
+  color:#333;  
+}
+.activePage{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.notice{
+  margin:8px 0 12px;
+  padding:8px 12px;
+  background:#fee2e2;
+  color:#991b1b;
+  border:1px solid #fecaca;
+  border-radius:6px;
+  font-weight:500;
+}

@@ -1,0 +1,241 @@
+/* === TỔNG THỂ SIDEBAR === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px; /* Độ rộng mới */
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb; /* Đường viền mỏng */
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === HEADER CỦA SIDEBAR (Logo/Title) === */
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 64px; /* Bằng chiều cao AdminHeader */
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0; /* Không co lại */
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  user-select: none;
+}
+
+.closeButton {
+  display: none; /* Chỉ hiện trên mobile */
+  cursor: pointer;
+  color: #6b7280;
+}
+
+/* === NỘI DUNG (Menu + Logout) === */
+.sidebarContent {
+  flex-grow: 1; /* Đẩy navFooter xuống dưới */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto; /* Cuộn nếu menu quá dài */
+}
+
+/* === KHU VỰC MENU CHÍNH === */
+.navMenu {
+  padding: 1rem;
+}
+
+.navGroupTitle {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 600;
+  color: #6b7280; /* Xám */
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem 0.5rem;
+  margin-top: 0.5rem;
+  user-select: none;
+}
+
+.navMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navMenu li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* 12px */
+  padding: 0.75rem;
+  border-radius: 8px; /* Bo góc hiện đại */
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #374151; /* Xám đậm */
+  transition: all 0.2s ease;
+}
+
+/* Icon trong list */
+.navMenu li svg {
+  width: 20px;
+  height: 20px;
+  color: #6b7280; /* Xám */
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+/* === HIỆU ỨNG HOVER === */
+.navMenu li:hover {
+  background-color: #f3f4f6; /* Xám rất nhạt */
+  color: #111827; /* Đen */
+}
+.navMenu li:hover svg {
+  color: #111827;
+}
+
+/* === HIỆU ỨNG ACTIVE (QUAN TRỌNG) === */
+.navMenu li.active {
+  background-color: #eef2ff; /* Nền xanh tím nhạt */
+  color: #4f46e5; /* Xanh tím đậm */
+  font-weight: 600;
+}
+.navMenu li.active svg {
+  color: #4f46e5; /* Xanh tím đậm */
+}
+
+/* === NÚT ĐĂNG XUẤT === */
+.navFooter {
+  padding: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.logoutButton {
+  /* Style giống hệt 1 mục menu */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+  color: #374151;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.logoutButton svg {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+.logoutButton:hover {
+  background-color: #fbecec; /* Nền đỏ nhạt */
+  color: #dc2626; /* Đỏ */
+}
+.logoutButton:hover svg {
+  color: #dc2626;
+}
+
+/* === NÚT TOGGLE (Hamburger) === */
+.toggle {
+  display: none; /* Ẩn trên desktop */
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 101;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  font-size: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.toggleInput {
+  display: none;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 1248px) {
+  .sidebar {
+    width: 200px; /* Thu hẹp sidebar */
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  /* Ẩn chữ, chỉ hiện icon */
+  .navMenu li span,
+  .logoutButton span,
+  .navGroupTitle {
+    display: none;
+  }
+  .navMenu li,
+  .logoutButton {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+  .logo {
+    /* Ẩn chữ "Admin Page" */
+    display: none;
+  }
+  .sidebarHeader {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar {
+    left: -280px; /* Ẩn sidebar */
+    width: 280px; /* Trả lại độ rộng cho mobile */
+  }
+  .toggle {
+    display: flex; /* Hiện nút hamburger */
+  }
+  .closeButton {
+    display: block; /* Hiện nút X */
+  }
+  .logo {
+    display: block; /* Hiện lại logo */
+  }
+  .sidebarHeader {
+    justify-content: space-between;
+  }
+  /* Hiện lại chữ khi menu mở trên mobile */
+  .navMenu li span,
+  .logoutButton span,
+  .navGroupTitle {
+    display: block;
+  }
+  .navMenu li,
+  .logoutButton {
+    justify-content: flex-start;
+  }
+  /* Khi click, đẩy sidebar vào */
+  .toggleInput:checked ~ .sidebar {
+    left: 0;
+  }
+  /* Thêm 1 lớp mờ che nội dung khi mở menu */
+  .toggleInput:checked ~ .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 99;
+  }
+}

@@ -1,0 +1,65 @@
+/* Order Detail Page CSS */
+
+.order-detail {
+  min-height: 500px;
+  max-width: 75rem;
+  margin: 4rem auto 2rem auto;
+  font-style: italic;
+}
+
+.order-container .order-info {
+  margin-bottom: 5rem;
+}
+.order-container .order-info > h1 {
+  color: #222;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.order-container .order-info > p {
+  margin-bottom: 0.5rem;
+  color: #999ea3;
+}
+.order-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-container th {
+  color: #333;
+  font-weight: 400;
+  padding: 1rem 0.5rem;
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.order-container td {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  color: #333;
+}
+
+.order-container td > img {
+  width: 100px;
+}
+.order-container .back {
+  margin-bottom: 2rem;
+}
+.order-container .back > a {
+  text-align: none;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  text-decoration: none;
+  padding: 0.75rem 0.5rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media screen and (max-width: 1248px) {
+  .order-detail {
+    padding: 1.5rem;
+  }
+}

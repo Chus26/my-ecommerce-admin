@@ -1,0 +1,28 @@
+.adminLayout {
+  display: flex; /* Giữ nguyên, đây là layout cha */
+  height: 100vh;
+  background-color: #f9fafb;
+}
+
+.mainContent {
+  /* XÓA BỎ margin-left: 300px; 
+    Đây chính là NGUYÊN NHÂN GÂY LỖI 
+  */
+  
+  flex: 1; /* Đây là mấu chốt: Tự động chiếm hết không gian còn lại */
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Đảm bảo main content chiếm đủ chiều cao */
+  overflow: hidden; /* Ngăn cuộn ở cấp độ main, để pageContent cuộn */
+}
+
+.pageContent {
+  flex: 1;
+  overflow-y: auto; /* Chỉ cho phép cuộn ở khu vực nội dung trang */
+  padding: 1.5rem; /* Thêm padding cho nội dung bên trong */
+}
+
+/* Media query không cần margin nữa,
+  chúng sẽ tự động hoạt động vì Sidebar (cha)
+  sẽ co lại và mainContent (flex: 1) sẽ tự bung ra.
+*/

@@ -1,0 +1,117 @@
+/* ===== FILE: AdminRevenuePanel.module.css (Layout Dọc) ===== */
+
+/* Wrapper chính - xếp theo chiều dọc */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Card biểu đồ tháng */
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 12px 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.chartBox {
+  width: 100%;
+  height: 260px;
+}
+
+/* Card top sản phẩm */
+.side {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Header trong card */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 600;
+  color: #111827;
+}
+
+.subtle {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* Nội dung trống */
+.empty {
+  padding: 12px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Tip */
+.tip {
+  background: #111827;
+  color: #f9fafb;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.tipVal {
+  font-weight: 600;
+}
+
+/* Danh sách top sản phẩm */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-size: 13px;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+
+.val {
+  font-size: 12px;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Progress bar */
+.barTrack {
+  width: 100%;
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+}

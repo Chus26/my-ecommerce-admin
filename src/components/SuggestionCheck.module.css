@@ -1,0 +1,470 @@
+/* --- General Container --- */
+.suggestionContainer {
+  padding: 20px;
+  background-color: #f9fafb; /* Nền nhẹ nhàng */
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* --- Header Area --- */
+.title {
+  font-size: 1.5rem; /* Tăng kích thước */
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 5px 0; /* Thêm margin bottom nhỏ */
+  border-bottom: 1px solid #e5e7eb; /* Đường kẻ phân cách */
+  padding-bottom: 10px;
+}
+
+.breadcrumb {
+  font-size: 0.85rem; /* Cỡ chữ nhỏ hơn */
+  color: #6b7280; /* Màu xám */
+  margin-bottom: 20px;
+}
+
+/* --- Controls Area --- */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 1rem; /* Khoảng cách giữa input và button */
+}
+
+.controls input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  flex-grow: 1; /* Cho input chiếm nhiều không gian hơn */
+  max-width: 400px;
+}
+
+.controls input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.controls button {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  background-color: #3b82f6; /* Màu xanh dương */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap; /* Tránh nút xuống dòng */
+}
+
+.controls button:hover:not(:disabled) {
+  background-color: #2563eb; /* Màu đậm hơn khi hover */
+}
+.controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Table Styles --- */
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.suggestionTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Header */
+.suggestionTable th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #4b5563;
+  text-align: left;
+  padding: 12px 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+/* Table Body Cells */
+.suggestionTable td {
+  padding: 12px 15px;
+  font-size: 0.85rem;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top; /* Giữ căn lề top cho nội dung dài */
+  text-align: left; /* Căn trái mặc định */
+}
+
+/* Remove vertical borders */
+.suggestionTable th,
+.suggestionTable td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Hover effect for rows */
+.suggestionTable tbody tr:hover td {
+  background-color: #f9fafb;
+}
+
+/* Cột Action căn giữa */
+.suggestionTable th:last-child,
+.suggestionTable td:last-child {
+  text-align: center;
+  vertical-align: middle; /* Căn giữa nút */
+  width: 130px; /* Cho cột action độ rộng cố định */
+}
+/* CSS Cột cho UserManagement */
+.colUser { width: 25%; }
+.colMainProduct { width: 30%; }
+.colAdvice { width: 25%; }
+.colActions { width: 15%; text-align: center; }
+
+/* Style cột User Info */
+.suggestionTable td:first-child small {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Style cột Sản phẩm chính */
+.suggestionTable td:nth-child(2) strong {
+  color: #111827; /* Màu đậm hơn cho mã SP */
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+/* --- Suggestion List within Cell --- */
+.suggestionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.suggestionList li {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #e5e7eb; /* Dùng màu border của bảng */
+  font-size: 0.8rem; /* Cỡ chữ nhỏ hơn trong list */
+  line-height: 1.4;
+}
+.suggestionList li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.suggestionList strong {
+  font-family: inherit; /* Kế thừa font từ td */
+  color: #1f2937; /* Màu đậm hơn */
+  font-weight: 500;
+}
+.suggestionList em {
+  color: #4b5563; /* Màu xám */
+  font-style: normal; /* Bỏ in nghiêng mặc định */
+}
+
+/* --- Note Input --- */
+.noteInput {
+  width: 100%;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.noteInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+.noteInput:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* --- Action Buttons --- */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center; /* Căn nút giữa cột */
+}
+
+.actionButtons button,
+.actionButton /* Thêm class .actionButton cho UserManagement */ {
+  outline: none;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  width: 80px;
+  color: white;
+}
+
+.actionButtons button:disabled,
+.actionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Nút Duyệt (Suggestion) */
+.actionButtons button:first-child {
+  background-color: #10b981; /* Xanh lá */
+}
+.actionButtons button:first-child:hover:not(:disabled) {
+  background-color: #059669; /* Đậm hơn */
+}
+
+/* Nút Từ chối (Suggestion) */
+.actionButtons button:last-child {
+  background-color: #ef4444; /* Đỏ */
+}
+.actionButtons button:last-child:hover:not(:disabled) {
+  background-color: #dc2626; /* Đậm hơn */
+}
+
+/* Status Text (Đã duyệt/Từ chối) */
+.statusApproved {
+  color: #059669;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.statusRejected {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* --- Loading, Error, No Suggestions Messages --- */
+.loadingText,
+.errorText,
+.noSuggestions {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.loadingText {
+  color: #4b5563;
+  background-color: #f3f4f6;
+}
+.errorText {
+  color: #991b1b;
+  background-color: #fee2e2;
+  font-weight: 500;
+  border: 1px solid #fecaca;
+}
+.noSuggestions {
+  color: #6b7280;
+  background-color: #f3f4f6;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 992px) {
+  .suggestionTable th,
+  .suggestionTable td {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Modal Styles (Cho UserFormModal) --- */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1060;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1061;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.modalActions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modalActions button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.modalActions button[type="button"] {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ccc;
+}
+
+.modalActions button[type="button"]:hover {
+  background-color: #e0e0e0;
+}
+
+.modalActions button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.modalActions button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.modalActions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ===== CSS PHÂN TRANG MỚI ===== */
+
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb; /* Phân cách với bảng */
+  margin-top: -1px; /* Khớp với box-shadow của bảng */
+  background-color: #fff; /* Nền trắng */
+  padding: 1rem 1.5rem; /* Padding giống cell */
+  border-bottom-left-radius: 8px; /* Bo góc */
+  border-bottom-right-radius: 8px; /* Bo góc */
+}
+
+.totalCount {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.25rem; /* Khoảng cách nhỏ giữa các nút */
+  align-items: center;
+}
+
+.pagination button,
+.pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px; /* Kích thước tối thiểu */
+  height: 36px;
+  padding: 0 0.5rem;
+  border: 1px solid #d1d5db; /* Border xám nhạt */
+  background-color: #fff;
+  color: #374151; /* Màu chữ */
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 6px; /* Bo góc */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #f9fafb; /* Nền xám nhạt khi hover */
+  border-color: #b0b5bd;
+}
+
+.pagination button:disabled {
+  color: #9ca3af; /* Màu chữ khi bị disable */
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Nút trang hiện tại (active) */
+.pagination .activePage {
+  background-color: #3b82f6; /* Màu xanh dương */
+  border-color: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Dấu ... (ellipsis) */
+.pagination .dots {
+  border: none;
+  background: none;
+  color: #6b7280;
+  cursor: default;
+  padding: 0 0.25rem;
+}
+
+/* Responsive cho Phân trang */
+@media screen and (max-width: 768px) {
+  .paginationContainer {
+    flex-direction: column; /* Xếp chồng */
+    gap: 1rem;
+    align-items: center;
+  }
+  .pagination {
+    /* Cho phép xuống dòng nếu quá nhiều nút trên mobile */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .totalCount {
+    text-align: center;
+  }
+}

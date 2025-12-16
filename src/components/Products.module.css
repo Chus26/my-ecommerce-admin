@@ -1,0 +1,377 @@
+/* --- General Container --- */
+.index {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Tăng khoảng cách giữa các phần tử */
+  width: 100%;
+  padding: 20px; /* Thêm padding chung */
+  background-color: #f9fafb; /* Nền nhẹ nhàng */
+  box-sizing: border-box; /* Quan trọng để padding không làm vỡ layout */
+}
+
+/* --- Header Area --- */
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Căn giữa các item theo chiều dọc */
+  border-bottom: 1px solid #e5e7eb; /* Đường kẻ phân cách nhẹ */
+  padding-bottom: 1rem;
+}
+
+.head h3 {
+  color: #111827; /* Màu chữ đậm hơn */
+  font-size: 1.5rem; /* Tăng kích thước tiêu đề */
+  font-weight: 600; /* Đậm hơn */
+  margin: 0; /* Bỏ margin mặc định */
+}
+
+.head button {
+  outline: none;
+  border: none;
+  padding: 0.65rem 1rem; /* Tăng padding */
+  color: #fff;
+  background-color: #10b981; /* Màu xanh lá cây */
+  cursor: pointer;
+  border-radius: 6px; /* Bo góc */
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.head button:hover {
+  background-color: #059669; /* Màu đậm hơn khi hover */
+}
+
+/* --- Filter Area --- */
+.filters {
+  display: flex;
+  gap: 1rem; /* Khoảng cách giữa ô tìm kiếm và select */
+  align-items: center;
+}
+
+.filters input,
+.filters select {
+  padding: 0.6rem 0.8rem; /* Đồng bộ padding */
+  border: 1px solid #d1d5db; /* Border nhẹ hơn */
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #3b82f6; /* Highlight border khi focus */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Hiệu ứng shadow nhẹ */
+}
+
+.filters input {
+  flex-grow: 1; /* Cho ô input chiếm nhiều không gian hơn */
+  max-width: 400px; /* Giới hạn độ rộng tối đa */
+}
+
+.filters select {
+  min-width: 180px; /* Độ rộng tối thiểu cho select */
+  cursor: pointer;
+  background-color: #fff; /* Nền trắng cho select */
+}
+
+
+/* --- Table Styles --- */
+.products {
+  width: 100%;
+  overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+}
+
+.products table {
+  width: 100%;
+  border-collapse: collapse; /* Gộp border */
+  background-color: #fff;
+  border-radius: 8px; /* Bo góc cho bảng */
+  overflow: hidden; /* Ẩn phần thừa do bo góc */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Shadow nhẹ */
+}
+
+/* Table Header */
+.products th {
+  background-color: #f3f4f6; /* Nền xám nhạt cho header */
+  font-weight: 600; /* Chữ đậm hơn */
+  font-size: 0.8rem; /* Cỡ chữ nhỏ hơn */
+  color: #4b5563; /* Màu chữ xám */
+  text-align: left; /* Căn trái tiêu đề */
+  padding: 12px 15px; /* Tăng padding */
+  text-transform: uppercase; /* Viết hoa tiêu đề */
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e5e7eb; /* Border đậm hơn dưới header */
+}
+
+/* Table Body Cells */
+.products td {
+  padding: 12px 15px; /* Tăng padding */
+  font-size: 0.85rem;
+  color: #374151; /* Màu chữ chính */
+  border-bottom: 1px solid #e5e7eb; /* Border ngang nhẹ */
+  vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+/* Remove vertical borders */
+.products th,
+.products td {
+  border-left: none;
+  border-right: none;
+}
+
+/* Alternating Row Colors (Optional but nice) */
+
+/* Hover effect for rows */
+.products tbody tr:hover td {
+  background-color: #f9fafb; /* Nền nhẹ khi hover */
+}
+
+
+/* Specific Column Alignments & Styles */
+.products th:nth-child(1), /* Mã hàng */
+.products td:nth-child(1) { text-align: left; font-family: monospace; font-weight: 600;}
+
+.products th:nth-child(4), /* Giá bán */
+.products td:nth-child(4) { text-align: right; white-space: nowrap; }
+
+.products th:nth-child(8), /* Tồn kho */
+.products td:nth-child(8) { text-align: right; }
+
+.products th:nth-child(9), /* Chỉnh sửa */
+.products td:nth-child(9) { text-align: center; }
+
+.products td:nth-child(6) { /* Hình ảnh */
+  text-align: center;
+  width: 100px; /* Giới hạn độ rộng cột ảnh */
+}
+
+.dateCell { /* Ngày cập nhật */
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: left;
+}
+
+.stockCell { /* Tồn kho */
+   text-align: right;
+   font-weight: 500;
+}
+
+.shortCell { /* Mô tả */
+  max-width: 250px; /* Giảm độ rộng tối đa một chút */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left; /* Căn trái mô tả */
+}
+
+/* Image Style */
+.products table td img {
+  display: inline-block; /* Để căn giữa hoạt động */
+  max-width: 60px; /* Giảm kích thước ảnh */
+  max-height: 60px;
+  object-fit: cover;
+  border-radius: 4px; /* Giảm bo góc */
+  vertical-align: middle;
+}
+
+/* Action Buttons */
+.action {
+  display: flex;
+  gap: 0.5rem; /* Khoảng cách giữa 2 nút */
+  justify-content: center; /* Căn giữa các nút */
+}
+
+.action button {
+  outline: none;
+  border: none;
+  padding: 0.4rem 0.8rem; /* Điều chỉnh padding nút */
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.75rem; /* Cỡ chữ nút nhỏ hơn */
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  white-space: nowrap; /* Tránh nút bị xuống dòng */
+}
+
+.action button:hover {
+  opacity: 0.85; /* Hiệu ứng mờ nhẹ khi hover */
+}
+
+.action .update {
+  background-color: #3b82f6; /* Màu xanh dương */
+  color: #fff;
+  border: 1px solid #3b82f6;
+}
+
+/* Nút xoá (mặc định là button thường) */
+.action button:not(.update) {
+  background-color: #ef4444; /* Màu đỏ */
+  color: #fff;
+  border: 1px solid #ef4444;
+}
+
+
+/* --- Responsive (Giữ nguyên hoặc điều chỉnh nếu cần) --- */
+@media screen and (max-width: 1248px) {
+  .index {
+    padding: 15px;
+  }
+  .filters {
+      flex-direction: column; /* Xếp chồng bộ lọc trên màn hình nhỏ */
+      align-items: stretch; /* Kéo dài input/select */
+  }
+   .filters input,
+   .filters select {
+       max-width: none; /* Bỏ giới hạn max-width */
+       width: 100%; /* Chiếm toàn bộ chiều rộng */
+   }
+  .products th,
+  .products td {
+    padding: 10px 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .head button {
+        align-self: flex-end; /* Nút "Thêm" qua phải */
+    }
+    /* Có thể ẩn bớt cột trên màn hình nhỏ nếu muốn */
+    /* Ví dụ: ẩn cột mô tả */
+     .products th:nth-child(3),
+     .products td:nth-child(3) {
+         display: none;
+     }
+     .products th,
+     .products td {
+       font-size: 0.8rem;
+       padding: 8px 10px;
+     }
+}
+
+/* --- CSS CHO PHÂN TRANG --- */
+
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb; /* Phân cách với bảng */
+  margin-top: -1px; /* Khớp với box-shadow của bảng */
+  background-color: #fff; /* Nền trắng */
+  padding: 1rem 1.5rem; /* Padding giống cell */
+  border-bottom-left-radius: 8px; /* Bo góc */
+  border-bottom-right-radius: 8px; /* Bo góc */
+}
+
+.totalCount {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.25rem; /* Khoảng cách nhỏ giữa các nút */
+  align-items: center;
+}
+
+.pagination button,
+.pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px; /* Kích thước tối thiểu */
+  height: 36px;
+  padding: 0 0.5rem;
+  border: 1px solid #d1d5db; /* Border xám nhạt */
+  background-color: #fff;
+  color: #374151; /* Màu chữ */
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 6px; /* Bo góc */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #f9fafb; /* Nền xám nhạt khi hover */
+  border-color: #b0b5bd;
+}
+
+.pagination button:disabled {
+  color: #9ca3af; /* Màu chữ khi bị disable */
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Nút trang hiện tại (active) */
+.pagination .activePage {
+  background-color: #3b82f6; /* Màu xanh dương (giống nút Cập nhật) */
+  border-color: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Dấu ... (ellipsis) */
+.pagination .dots {
+  border: none;
+  background: none;
+  color: #6b7280;
+  cursor: default;
+  padding: 0 0.25rem;
+}
+
+
+/* Responsive cho Phân trang */
+@media screen and (max-width: 768px) {
+  .paginationContainer {
+    flex-direction: column; /* Xếp chồng */
+    gap: 1rem;
+    align-items: center;
+  }
+  .pagination {
+    /* Cho phép xuống dòng nếu quá nhiều nút trên mobile */
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  .totalCount {
+    text-align: center;
+  }
+}
+
+/* src/components/Products.module.css */
+
+/* ... (các style cũ) ... */
+
+/* Style cho nhóm nút bấm */
+.buttonGroup {
+  display: flex;
+  align-items: center;
+}
+
+/* Style cho nút Xuất Excel */
+.excelButton {
+  background-color: #28a745 !important; /* Màu xanh lá Excel */
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.excelButton:hover {
+  background-color: #218838 !important;
+}
+
+.excelButton:disabled {
+  background-color: #6c757d !important;
+  cursor: not-allowed;
+}
