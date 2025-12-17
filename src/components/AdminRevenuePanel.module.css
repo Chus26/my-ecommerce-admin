@@ -1,6 +1,4 @@
-/* ===== FILE: AdminRevenuePanel.module.css (Layout Dọc) ===== */
-
-/* Wrapper chính - xếp theo chiều dọc */
+/* Wrapper chính */
 .wrap {
   display: flex;
   flex-direction: column;
@@ -8,55 +6,65 @@
   align-items: stretch;
 }
 
-/* Card biểu đồ tháng */
+/* 👇 THÊM: Style cho dòng cảnh báo trên Mobile */
+.mobileWarning {
+  background-color: #fef2f2; /* Màu nền đỏ nhạt */
+  color: #ef4444;            /* Chữ đỏ */
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #fee2e2;
+  text-align: center;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+/* Card biểu đồ */
 .card {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 12px 12px 4px;
+  padding: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .chartBox {
   width: 100%;
-  height: 260px;
+  height: 300px;
+  position: relative;
 }
 
-/* Card top sản phẩm */
-.side {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-/* Header trong card */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .title {
   font-weight: 600;
   color: #111827;
+  font-size: 16px;
 }
 
 .subtle {
   color: #6b7280;
-  font-size: 12px;
+  font-size: 13px;
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
-/* Nội dung trống */
 .empty {
-  padding: 12px;
-  color: #6b7280;
+  padding: 30px;
+  text-align: center;
+  color: #9ca3af;
   font-size: 14px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px dashed #e5e7eb;
 }
 
-/* Tip */
 .tip {
   background: #111827;
   color: #f9fafb;
@@ -64,54 +72,85 @@
   border-radius: 10px;
   font-size: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 100;
 }
 
 .tipVal {
   font-weight: 600;
 }
 
-/* Danh sách top sản phẩm */
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 4px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .wrap { gap: 12px; }
+  .card { padding: 10px; }
+  .chartBox { height: 240px; }
+  .title { font-size: 14px; }
+  .subtle { font-size: 11px; padding: 2px 6px; }
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 6px;
+@media (max-width: 480px) {
+  .chartBox { height: 220px; }
+  .title, .empty { font-size: 13px; }
 }
 
-.name {
-  font-size: 13px;
-  color: #111827;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 60%;
-}
+/* ================= PRINT STYLES ================= */
+@media print {
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
 
-.val {
-  font-size: 12px;
-  color: #374151;
-  font-weight: 600;
-}
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #fff !important;
+    min-width: 1024px !important; /* Ép rộng để không bị bóp nghẹt */
+    width: 1024px !important;
+    transform: scale(0.95);
+    transform-origin: top left;
+  }
 
-/* Progress bar */
-.barTrack {
-  width: 100%;
-  height: 8px;
-  background: #f3f4f6;
-  border-radius: 999px;
-  overflow: hidden;
-}
+  .wrap {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-.barFill {
-  height: 100%;
-  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  .card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 1px solid #ccc !important;
+    margin-bottom: 30px !important;
+    padding: 20px !important;
+    background: #fff !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .title {
+    font-size: 24px !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+  }
+
+  .subtle {
+    font-size: 14px !important;
+    color: #333 !important;
+    font-style: italic;
+  }
+
+  .chartBox {
+    height: 380px !important;
+    width: 100% !important;
+  }
+
+  text { fill: #000 !important; }
+
+  /* Ẩn dòng cảnh báo mobile khi in */
+  .mobileWarning, 
+  .tip, .no-print, button, .empty {
+    display: none !important;
+  }
 }

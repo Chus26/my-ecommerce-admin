@@ -11,6 +11,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình quá nhỏ */
+  gap: 10px;
 }
 
 .dashboardHeader h4 {
@@ -22,9 +24,11 @@
 /* ===== Button Group ===== */
 .buttonGroup {
   display: flex;
-  gap: 0.75rem;
+  gap: 10px; /* Khoảng cách giữa 2 nút */
+  align-items: center;
 }
 
+/* Style cho nút In */
 .printButton {
   background-color: #5f76e8;
   color: #fff;
@@ -35,15 +39,40 @@
   font-weight: 500;
   transition: opacity 0.2s;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap; /* Chống vỡ chữ */
 }
 
 .printButton:hover {
   opacity: 0.9;
 }
 
+/* Style cho nút Excel (MỚI) */
+.excelButton {
+  background-color: #28a745; /* Màu xanh lá đặc trưng */
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap; /* Quan trọng: Giữ chữ trên 1 dòng */
+}
+
+.excelButton:hover {
+  background-color: #218838;
+}
+
 /* ===== REPORT STYLES (HEADER & FOOTER) ===== */
 
-/* Wrapper: Trên web thì nền trắng, đổ bóng đẹp. Khi in thì mất border */
+/* Wrapper: Trên web nền trắng */
 .reportWrapper {
   background: white;
   padding: 20px;
@@ -51,7 +80,7 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* ⚠️ QUAN TRỌNG: Mặc định ẨN Header và Footer trên màn hình web */
+/* Mặc định ẨN Header và Footer trên màn hình web */
 .printHeader,
 .printFooter {
   display: none;
@@ -59,17 +88,17 @@
 
 /* --- Style cho LOGO --- */
 .printLogo {
-  width: 40px;         /* Chỉnh độ to nhỏ của logo ở đây */
+  width: 60px; /* Logo to vừa phải */
   height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto 10px auto; /* Căn giữa và cách tên shop 10px */
+  margin: 0 auto 10px auto;
 }
 
 /* --- Style cho Header (dùng khi in) --- */
 .storeName {
   font-size: 24px;
-  font-weight: 800; /* Đậm hơn chút cho uy tín */
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 5px;
   color: #333;
@@ -83,9 +112,9 @@
 
 .divider {
   border: 0;
-  border-top: 2px solid #000; /* Đen đậm */
+  border-top: 2px solid #000;
   margin: 15px auto;
-  width: 100%; /* Kẻ ngang hết trang */
+  width: 100%;
 }
 
 .reportTitle {
@@ -135,7 +164,7 @@
 }
 
 .signatureSpace {
-  height: 100px; /* Chỗ trống để ký */
+  height: 100px;
 }
 
 .signatureName {
@@ -151,13 +180,11 @@
     margin: 1.5cm;
   }
 
-  /* Ẩn nút bấm Dashboard */
   .no-print,
   .no-print * {
     display: none !important;
   }
 
-  /* Reset body */
   body, html {
     background: #fff !important;
     font-size: 12pt;
@@ -174,7 +201,6 @@
     border: none !important;
   }
 
-  /* ⚠️ HIỆN Header (Có Logo) và Footer khi in */
   .printHeader {
     display: block !important;
     text-align: center;
@@ -188,7 +214,6 @@
     page-break-inside: avoid;
   }
 
-  /* Ép màu đen in cho nét */
   h1, h2, h3, h4, h5, h6, p, span, div {
     color: #000 !important;
   }
@@ -201,7 +226,6 @@
     border-color: #000 !important;
   }
 
-  /* In cả background biểu đồ */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
