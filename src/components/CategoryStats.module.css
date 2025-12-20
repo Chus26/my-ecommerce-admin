@@ -1,0 +1,184 @@
+/* --- CONTAINER CHÍNH --- */
+.statsContainer {
+  /* Padding nội dung bên trong */
+  padding: 1.5rem; 
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+  /* 👇 BẮT BUỘC: Để padding không làm vỡ chiều rộng */
+  box-sizing: border-box; 
+  
+  /* Chiếm 100% chiều rộng của cha (.info), không phải 100vw */
+  width: 100%; 
+  min-height: 100%;
+  
+  /* Hiệu ứng hiện dần */
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 15px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconTitle {
+  font-size: 1.8rem;
+  color: #3b82f6; /* Xanh dương */
+}
+
+.titleGroup h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.subTitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+/* --- CONTROLS AREA (Filter & Button) --- */
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter select {
+  padding: 0.6rem 2rem 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
+  min-width: 140px;
+  transition: all 0.2s ease;
+  /* Mũi tên custom */
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+}
+
+.filter select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  background-color: #10b981; /* Xanh lá */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.exportBtn:hover {
+  opacity: 0.9;
+}
+
+/* --- TABLE WRAPPER (Khung chứa bảng) --- */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá dài */
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* Đảm bảo bảng không bị co dúm trên màn hình nhỏ */
+}
+
+/* Table Header */
+.table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: left;
+  padding: 14px 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+/* Table Body */
+.table td {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+/* --- PHÂN CẤP (HIERARCHY) --- */
+/* Cấp 1 */
+.rowLevel1 { background-color: #fff; cursor: pointer; font-weight: 600; transition: 0.1s; }
+.rowLevel1:hover { background-color: #f3f4f6; }
+.nameL1 { color: #111827; }
+.moneyL1 { color: #2563eb; font-weight: 700; }
+
+/* Cấp 2 */
+.rowLevel2 { background-color: #fafafa; cursor: pointer; }
+.rowLevel2:hover { background-color: #f3f4f6; }
+.nameL2 { padding-left: 40px !important; color: #4b5563; font-weight: 500; }
+
+/* Cấp 3 */
+.rowLevel3 { background-color: #fff; }
+.rowLevel3:hover { background-color: #fffbeb; }
+.nameL3 { padding-left: 80px !important; color: #6b7280; font-size: 0.85rem; }
+
+/* Tiện ích */
+.textRight { text-align: right !important; }
+.textCenter { text-align: center !important; }
+.iconCell { color: #9ca3af; width: 40px; text-align: center; }
+
+/* Percent Bar */
+.percentBar { display: flex; align-items: center; gap: 10px; width: 100%; }
+.fill { height: 6px; background-color: #3b82f6; border-radius: 3px; flex-grow: 1; max-width: 120px; }
+.percentLabel { font-size: 0.8rem; color: #6b7280; min-width: 45px; text-align: right; }
+
+.loading { text-align: center; padding: 50px; color: #6b7280; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header { flex-direction: column; align-items: flex-start; }
+  .actions { width: 100%; justify-content: space-between; }
+  .filter select { width: 100%; }
+}

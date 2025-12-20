@@ -5,16 +5,13 @@
 }
 
 .mainContent {
-  /* XÓA BỎ margin-left: 300px; 
-    Đây chính là NGUYÊN NHÂN GÂY LỖI 
-  */
-  
-  flex: 1; /* Đây là mấu chốt: Tự động chiếm hết không gian còn lại */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Đảm bảo main content chiếm đủ chiều cao */
-  overflow: hidden; /* Ngăn cuộn ở cấp độ main, để pageContent cuộn */
+  height: 100vh;
+  overflow: hidden;
 }
+
 
 .pageContent {
   flex: 1;

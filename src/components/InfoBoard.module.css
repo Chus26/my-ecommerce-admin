@@ -1,8 +1,14 @@
 /* Info bar styling */
 .info {
-  margin-left: 300px;
+  /* Đặt cứng 280px để khớp với Sidebar */
+  margin-left: 280px; 
+  width: calc(100% - 280px);
+  
   padding: 1.5rem;
-  width: calc(100% - 300px);
+  background-color: #f3f4f6; /* Màu nền xám nhẹ chuẩn dashboard */
+  min-height: 100vh;
+  box-sizing: border-box; /* Quan trọng: Padding không làm vỡ layout */
+  transition: all 0.3s ease;
 }
 
 .index > .statistic {
@@ -230,57 +236,70 @@
 }
 
 /* Responsive */
+/* ===== FILE: InfoBoard.module.css ===== */
+
+/* ... Giữ nguyên code phần trên ... */
+
+/* 👇 THAY THẾ TỪ ĐOẠN NÀY TRỞ XUỐNG 👇 */
+
+/* Responsive: Màn hình Laptop nhỏ (Dưới 1248px) */
 @media screen and (max-width: 1248px) {
   .index {
     padding-right: 1rem;
   }
+  
   .info {
-    margin-left: 200px;
-    padding: 1.2rem 0 0 1.2rem;
-    width: calc(100% - 200px);
+    /* ❌ Cũ: 200px (Gây lỗi bị đè) */
+    /* ✅ Mới: 280px (Khớp với Sidebar) */
+    margin-left: 280px; 
+    padding: 1.2rem 1rem 0 1.2rem; /* Chỉnh padding gọn lại */
+    width: calc(100% - 280px);
   }
+
   .info > div {
-    margin-right: 1rem;
+    margin-right: 0; /* Xóa margin thừa */
   }
+
   .transactions {
     padding: 1.5rem 0 0 1.5rem;
   }
+  
   .transactions th,
   .transactions td {
-    padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+    padding: 0.25rem 0.5rem;
     font-size: 0.8rem;
   }
 }
 
+/* Responsive: Tablet (Dưới 992px) - Sidebar ẩn */
 @media screen and (max-width: 992px) {
   .info {
     margin-left: 0;
-
     width: 100%;
+    padding: 1rem;
   }
   .transactions {
     padding: 1.5rem 0 0 1.5rem;
   }
 }
+
+/* Responsive: Mobile (Dưới 732px) */
 @media screen and (max-width: 732px) {
   .info {
     margin-left: 0;
-
     width: 100%;
+    padding: 1rem;
   }
   .info > div {
     margin-left: 0;
   }
-  .transactions th,
-  .hotel th,
-  .hotel td,
-  .transactions td,
-  .room th,
-  .room td {
+  /* Thu nhỏ font bảng trên mobile */
+  .transactions th, .hotel th, .room th,
+  .transactions td, .hotel td, .room td {
     padding: 0.25rem;
     font-size: 0.75rem;
   }
   .transactions {
-    padding: 1.5rem 0 0 1.5rem;
+    padding: 1rem 0 0 0.5rem;
   }
 }

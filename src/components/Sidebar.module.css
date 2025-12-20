@@ -170,72 +170,77 @@
 }
 
 /* === RESPONSIVE === */
+/* ... Giữ nguyên toàn bộ phần trên ... */
+
+/* 👇 THAY THẾ TOÀN BỘ PHẦN BÊN DƯỚI 👇 */
+
+/* === RESPONSIVE === */
+
+/* 1. Màn hình Laptop (Dưới 1248px) */
+/* 👇 QUAN TRỌNG: Giữ nguyên 280px để khớp với InfoBoard, KHÔNG co nhỏ còn 200px nữa */
 @media screen and (max-width: 1248px) {
   .sidebar {
-    width: 200px; /* Thu hẹp sidebar */
+    width: 280px; /* Giữ nguyên độ rộng chuẩn */
   }
-  .logo {
-    font-size: 1.1rem;
-  }
-  /* Ẩn chữ, chỉ hiện icon */
+  
+  /* Hiện lại chữ (code cũ của bạn đang ẩn đi) */
   .navMenu li span,
   .logoutButton span,
   .navGroupTitle {
-    display: none;
+    display: block; 
   }
-  .navMenu li,
-  .logoutButton {
-    justify-content: center;
-    padding: 0.75rem;
-  }
+  
   .logo {
-    /* Ẩn chữ "Admin Page" */
-    display: none;
+    display: block;
   }
-  .sidebarHeader {
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .sidebar {
-    left: -280px; /* Ẩn sidebar */
-    width: 280px; /* Trả lại độ rộng cho mobile */
-  }
-  .toggle {
-    display: flex; /* Hiện nút hamburger */
-  }
-  .closeButton {
-    display: block; /* Hiện nút X */
-  }
-  .logo {
-    display: block; /* Hiện lại logo */
-  }
+  
   .sidebarHeader {
     justify-content: space-between;
   }
-  /* Hiện lại chữ khi menu mở trên mobile */
-  .navMenu li span,
-  .logoutButton span,
-  .navGroupTitle {
+}
+
+/* 2. Màn hình Tablet & Mobile (Dưới 992px) */
+@media screen and (max-width: 992px) {
+  .sidebar {
+    left: -280px; /* Ẩn sidebar sang trái */
+    width: 280px; /* Khi mở ra vẫn là 280px */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1); 
+  }
+
+  .toggle {
+    display: flex; /* Hiện nút hamburger */
+  }
+
+  .closeButton {
+    display: block; /* Hiện nút X */
+  }
+
+  .logo {
     display: block;
   }
-  .navMenu li,
-  .logoutButton {
-    justify-content: flex-start;
+
+  .sidebarHeader {
+    justify-content: space-between;
   }
-  /* Khi click, đẩy sidebar vào */
+
+  /* Logic Toggle */
   .toggleInput:checked ~ .sidebar {
-    left: 0;
+    left: 0; /* Trượt sidebar ra */
   }
-  /* Thêm 1 lớp mờ che nội dung khi mở menu */
+
+  /* Overlay (Màn đen mờ che nội dung khi mở menu) */
   .toggleInput:checked ~ .overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 90; /* Nằm dưới sidebar */
+    display: block;
+  }
+  
+  .overlay {
+    display: none;
   }
 }
